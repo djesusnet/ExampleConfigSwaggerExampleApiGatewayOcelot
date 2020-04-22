@@ -1,0 +1,55 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44339
+        }
+      ],
+      "UpstreamPathTemplate": "/api1/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "SwaggerKey": "ApiOne"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44377
+        }
+      ],
+      "UpstreamPathTemplate": "/api2/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "SwaggerKey": "ApiTwo"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "ApiOne",
+      "Config": [
+        {
+          "Name": "Api One",
+          "Version": "v1",
+          "Url": "https://localhost:44339/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiTwo",
+      "Config": [
+        {
+          "Name": "Api Two",
+          "Version": "v1",
+          "Url": "https://localhost:44377/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+
+  "GlobalConfiguration": {
+  }
+}
