@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Microsoft.AspNetCore.Mvc;
+using MMLib.Ocelot.Provider.AppConfiguration;
 
 namespace ApiGateway
 {
@@ -22,7 +23,7 @@ namespace ApiGateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot(configuration);
+            services.AddOcelot();
             services.AddSwaggerForOcelot(configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
@@ -36,7 +37,7 @@ namespace ApiGateway
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-            app.UseSwaggerForOcelotUI(configuration, opt =>
+            app.UseSwaggerForOcelotUI(opt =>
             {
                 opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
                 opt.PathToSwaggerGenerator = "/swagger/docs";

@@ -30,6 +30,7 @@
   "SwaggerEndPoints": [
     {
       "Key": "ApiOne",
+      "TransformByOcelotConfig": false,
       "Config": [
         {
           "Name": "Api One",
@@ -40,6 +41,7 @@
     },
     {
       "Key": "ApiTwo",
+      "TransformByOcelotConfig": false,
       "Config": [
         {
           "Name": "Api Two",
@@ -51,5 +53,6 @@
   ],
 
   "GlobalConfiguration": {
+    "BaseUrl": "http://localhost::44335"
   }
 }
