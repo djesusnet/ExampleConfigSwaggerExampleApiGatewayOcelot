@@ -1,5 +1,5 @@
 {
-  "ReRoutes": [
+  "Routes": [
     {
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "https",
@@ -30,7 +30,6 @@
   "SwaggerEndPoints": [
     {
       "Key": "ApiOne",
-      "TransformByOcelotConfig": false,
       "Config": [
         {
           "Name": "Api One",
@@ -41,7 +40,6 @@
     },
     {
       "Key": "ApiTwo",
-      "TransformByOcelotConfig": false,
       "Config": [
         {
           "Name": "Api Two",
@@ -53,6 +51,6 @@
   ],
 
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44335"
+    "BaseUrl": "https://localhost"
   }
 }
